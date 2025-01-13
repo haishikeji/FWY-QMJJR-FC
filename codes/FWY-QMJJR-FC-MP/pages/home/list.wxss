@@ -1,0 +1,7 @@
+/* pages/home/list.wxss */
+@import "../home//index.wxss";
+.filtview
+{
+    position: sticky !important;
+    top: 0;
+} 

@@ -1,0 +1,10 @@
+<!--pages/home/bannerinfo.wxml-->
+<wxs src="../../utils/tool.wxs" module="tools"></wxs>
+<view class="title">{{detail.title}}</view>
+<view class="flex m-t-20">
+    <view class="f-24 c-9">{{detail.views}}次浏览 | {{tools.formatdate(detail.pub_time)}}</view>
+</view>
+<view class="m-t-20 c-9 f-24">文章来源：{{detail.author}}</view>
+<view class="m-t-30" style="width: 100%;">
+  <rich-text nodes="{{desc}}"></rich-text>
+</view>

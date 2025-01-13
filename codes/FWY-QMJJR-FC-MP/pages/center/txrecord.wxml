@@ -1,0 +1,29 @@
+<!--pages/center/txrecord.wxml-->
+<wxs src="../../utils/tool.wxs" module="tools"></wxs>
+<view class="list">
+    <block wx:for="{{array}}">
+        <view class="item flex-sp">
+            <view class="flex">
+                <image src="../../images/21.png" style="width: 80rpx;height: 80rpx;"></image>
+                <view class="m-l-30">
+                    <view class="f-32">{{bkconfig.commission}}提现</view>
+                    <view class="f-24 c-9 m-t-10">{{tools.substr1(item.created_at,5,16)}}</view>
+                </view>
+            </view>
+            <view class="flex-cl">
+                <view class="f-36 f-b" style="color: #FF5530;"><text class="f-24">￥</text>{{item.money}}</view>
+                <view class="state ing" wx:if="{{item.examine_state==0}}">审核中</view>
+                <view class="state nopass" wx:if="{{item.examine_state==2}}">未通过</view>
+                <view class="state pass" wx:if="{{item.examine_state==1 && item.pay_state==0}}">发放中</view>  
+                <view class="state pass" wx:if="{{item.examine_state==1 && item.pay_state==1}}">已发放</view>  
+            </view>
+            
+        </view>
+    </block>
+
+    <view class="emptyview" wx:if="{{array.length==0}}">
+        <image src="../../images/e2.png" mode="aspectFit"></image>
+        <text class="c-9 f-24">暂无提现记录~</text>
+    </view>
+
+</view>
